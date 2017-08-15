@@ -751,17 +751,17 @@ public class AndroidUtilities {
     }*/
 
     public static void checkForCrashes(Activity context) {
-        CrashManager.register(context, BuildVars.HOCKEY_APP_HASH, new CrashManagerListener() {
-            @Override
-            public boolean includeDeviceData() {
-                return true;
-            }
-        });
+//        CrashManager.register(context, BuildVars.HOCKEY_APP_HASH, new CrashManagerListener() {
+//            @Override
+//            public boolean includeDeviceData() {
+//                return true;
+//            }
+//        });
     }
 
     public static void checkForUpdates(Activity context) {
         if (BuildVars.DEBUG_VERSION) {
-            UpdateManager.register(context, BuildVars.HOCKEY_APP_HASH);
+            //UpdateManager.register(context, BuildVars.HOCKEY_APP_HASH);
         }
     }
 
