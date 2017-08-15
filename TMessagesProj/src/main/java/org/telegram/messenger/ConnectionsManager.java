@@ -65,7 +65,7 @@ public class ConnectionsManager implements Action.ActionDelegate, TcpConnection.
     protected int currentDatacenterId;
     protected int movingToDatacenterId;
     private long lastOutgoingMessageId = 0;
-    private int isTestBackend = 0;
+    private int isTestBackend = 1;
     private int timeDifference = 0;
     private int currentPingTime;
     private int lastDestroySessionRequestTime;
@@ -354,7 +354,7 @@ public class ConnectionsManager implements Action.ActionDelegate, TcpConnection.
         Utilities.stageQueue.postRunnable(new Runnable() {
             @Override
             public void run() {
-                File configFile = new File(ApplicationLoader.applicationContext.getFilesDir(), "config.dat");
+                File configFile = new File(ApplicationLoader.applicationContext.getFilesDir(), "config123.dat");
                 if (configFile.exists()) {
                     try {
                         SerializedData data = new SerializedData(configFile);
@@ -378,7 +378,7 @@ public class ConnectionsManager implements Action.ActionDelegate, TcpConnection.
                     }
                 } else {
                     SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("dataconfig", Context.MODE_PRIVATE);
-                    isTestBackend = preferences.getInt("datacenterSetId", 0);
+                    isTestBackend = preferences.getInt("datacenterSetId", 1);
                     currentDatacenterId = preferences.getInt("currentDatacenterId", 0);
                     timeDifference = preferences.getInt("timeDifference", 0);
                     lastDcUpdateTime = preferences.getInt("lastDcUpdateTime", 0);
