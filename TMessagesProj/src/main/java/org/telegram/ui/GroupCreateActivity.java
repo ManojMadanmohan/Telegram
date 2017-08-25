@@ -30,13 +30,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 
 import org.telegram.android.AndroidUtilities;
 import org.telegram.PhoneFormat.PhoneFormat;
@@ -127,6 +121,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     @Override
     public boolean onFragmentCreate() {
+        Toast.makeText(getParentActivity(), "Ohhh ho, new group? Kis liye??", Toast.LENGTH_LONG).show();
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.contactsDidLoaded);
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.updateInterfaces);
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.chatDidCreated);
