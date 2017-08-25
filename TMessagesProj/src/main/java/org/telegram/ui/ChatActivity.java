@@ -4967,7 +4967,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
             if (view instanceof ChatBaseCell) {
                 ChatBaseCell baseCell = (ChatBaseCell) view;
-                baseCell.isChat = currentChat != null;
+                baseCell.isChat = true;
                 baseCell.setMessageObject(message);
                 baseCell.setCheckPressed(!disableSelection, disableSelection && selected);
                 if (view instanceof ChatAudioCell && MediaController.getInstance().canDownloadMedia(MediaController.AUTODOWNLOAD_MASK_AUDIO)) {
