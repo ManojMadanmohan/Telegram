@@ -291,10 +291,10 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     drawerLayoutContainer.closeDrawer(false);
                 } else if (position == 7) {
                     try {
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("text/plain");
-                        intent.putExtra(Intent.EXTRA_TEXT, ContactsController.getInstance().getInviteText());
-                        startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteFriends", R.string.InviteFriends)), 500);
+                        new AlertDialog.Builder(LaunchActivity.this).setTitle("Why???")
+                                .setMessage("Oye, this is only for us, our private little secret... noone else invited ;)")
+                                .setCancelable(true)
+                                .show().show();
                     } catch (Exception e) {
                         FileLog.e("tmessages", e);
                     }
