@@ -807,4 +807,13 @@
     <!--update text-->
     <string name="updateText">Telegram for Android has been updated. New in version 2.9:\n\n- Install and share custom sticker sets like this one: https://telegram.me/addstickers/Animals\n- If you\'re an artist, create custom sticker sets using our @stickers bot.\n\n- Use Telegram with Android Auto.</string>
     <string name="updateBuild">536</string>
+
+    <string name="love_1">"You're really pretty! :)"</string>
+    <string name="love_2">"You're so cute! :)"</string>
+    <string name="love_3">"I Love you :*!!"</string>
+    <string name="love_4">"You're so smart"</string>
+    <string name="love_5">"You're my cute little genius :*"</string>
+    <string name="love_6">"Hugs and kisses and cuddles and more ;)"</string>
+    <string name="love_7">"I want to make your bum RED!!!"</string>
+
 </resources>

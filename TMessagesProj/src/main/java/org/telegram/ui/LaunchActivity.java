@@ -1306,6 +1306,32 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     }
 
     @Override
+    protected void onStart()
+    {
+        super.onStart();
+        showLove();
+    }
+
+    private void showLove()
+    {
+        ArrayList<String> loveMessages = new ArrayList<>();
+        loveMessages.add(getString(R.string.love_1));
+        loveMessages.add(getString(R.string.love_2));
+        loveMessages.add(getString(R.string.love_3));
+        loveMessages.add(getString(R.string.love_4));
+        loveMessages.add(getString(R.string.love_5));
+        loveMessages.add(getString(R.string.love_6));
+        loveMessages.add(getString(R.string.love_7));
+
+        if(Math.random() > 0.5)
+        {
+            int num = ((int)Math.round((Math.random()*700)))%7;
+            String msg = loveMessages.get(num);
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         onPasscodeResume();
