@@ -828,8 +828,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Hours", 1)),
                                 LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Hours", 8)),
                                 LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Days", 2)),
-                                LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Week", 1)),
-                                LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Month", 1)),
+                                LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Weeks", 1)),
+                                LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Months", 1)),
                                 LocaleController.getString("MuteDisable", R.string.MuteDisable)
                         };
                         builder.setItems(items, new DialogInterface.OnClickListener() {
