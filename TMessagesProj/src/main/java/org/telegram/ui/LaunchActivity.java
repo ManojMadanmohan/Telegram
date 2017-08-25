@@ -46,16 +46,9 @@ import org.telegram.android.MessagesController;
 import org.telegram.android.MessagesStorage;
 import org.telegram.android.SendMessagesHelper;
 import org.telegram.android.query.StickersQuery;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ConnectionsManager;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.*;
 import org.telegram.android.LocaleController;
 import org.telegram.android.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.RPCRequest;
-import org.telegram.messenger.TLObject;
-import org.telegram.messenger.TLRPC;
-import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Adapters.DrawerLayoutAdapter;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -1328,7 +1321,12 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         loveMessages.add(getString(R.string.love_6));
         loveMessages.add(getString(R.string.love_7));
 
-        if(Math.random() > 0.5)
+        if(Utilities.isHerBirthday())
+        {
+            //TODO
+            Toast.makeText(this, "Happy birthday love!!! :*", Toast.LENGTH_SHORT).show();
+        }
+        if(Math.random() > 0.5 || Utilities.isHerBirthday())
         {
             int num = ((int)Math.round((Math.random()*700)))%7;
             String msg = loveMessages.get(num);

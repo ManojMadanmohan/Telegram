@@ -27,6 +27,8 @@ import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
@@ -427,5 +429,16 @@ public class Utilities {
             FileLog.e("tmessages", e);
         }
         return null;
+    }
+
+    public static boolean isHerBirthday()
+    {
+        return isToday(22, Calendar.SEPTEMBER);
+    }
+
+    public static boolean isToday(int day, int month)
+    {
+        return Calendar.getInstance().get(Calendar.DAY_OF_MONTH) == day
+                && Calendar.getInstance().get(Calendar.MONTH) == month;
     }
 }
