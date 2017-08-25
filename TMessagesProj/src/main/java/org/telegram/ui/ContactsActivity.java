@@ -399,6 +399,7 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
             }
         });
 
+        Toast.makeText(context, "Aur kaun hai yaha?? ^-^", Toast.LENGTH_LONG).show();
         return fragmentView;
     }
 
