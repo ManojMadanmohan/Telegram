@@ -1329,7 +1329,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
             //TODO
             Toast.makeText(this, "Happy birthday love!!! :*", Toast.LENGTH_SHORT).show();
         }
-        if(Math.random() > 0.5 || Utilities.isHerBirthday())
+        if(Math.random() > 0.8 || Utilities.isHerBirthday())
         {
             int num = ((int)Math.round((Math.random()*700)))%7;
             String msg = loveMessages.get(num);
