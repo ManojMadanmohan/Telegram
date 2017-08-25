@@ -314,6 +314,11 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                         FileLog.e("tmessages", e);
                     }
                     drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 10) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+9769550660"));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivityForResult(intent, 500);
+                    drawerLayoutContainer.closeDrawer(false);
                 }
             }
         });
