@@ -828,6 +828,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Hours", 1)),
                                 LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Hours", 8)),
                                 LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Days", 2)),
+                                LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Week", 1)),
+                                LocaleController.formatString("MuteFor", R.string.MuteFor, LocaleController.formatPluralString("Month", 1)),
                                 LocaleController.getString("MuteDisable", R.string.MuteDisable)
                         };
                         builder.setItems(items, new DialogInterface.OnClickListener() {
@@ -841,6 +843,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         } else if (i == 2) {
                                             untilTime += 60 * 60 * 48;
                                         } else if (i == 3) {
+                                            untilTime = 60 * 60 * 24 * 7;
+                                        } else if (i == 4) {
+                                            untilTime = 60 * 60 * 24 * 30;
+                                        } else if (i == 5) {
                                             untilTime = Integer.MAX_VALUE;
                                         }
 
