@@ -251,14 +251,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         builder.setMessage(LocaleController.getString("AreYouSureUnblockContact", R.string.AreYouSureUnblockContact));
                     }
                     builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                    builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("BREAK-UP", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            if (!userBlocked) {
-                                MessagesController.getInstance().blockUser(user_id);
-                            } else {
-                                MessagesController.getInstance().unblockUser(user_id);
-                            }
+                            new AlertDialog.Builder(getParentActivity()).setCancelable(true)
+                                    .setTitle("HaHa")
+                                    .setMessage("I won't let you :*")
+                                    .show().show();
                         }
                     });
                     builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
@@ -287,12 +286,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
                     builder.setMessage(LocaleController.getString("AreYouSureDeleteContact", R.string.AreYouSureDeleteContact));
                     builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                    builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("BREAK-UP", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            ArrayList<TLRPC.User> arrayList = new ArrayList<>();
-                            arrayList.add(user);
-                            ContactsController.getInstance().deleteContact(arrayList);
+                            new AlertDialog.Builder(getParentActivity()).setCancelable(true)
+                                    .setTitle("HaHa")
+                                    .setMessage("I won't let you :*")
+                                    .show().show();
                         }
                     });
                     builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
