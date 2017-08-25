@@ -62,6 +62,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Map;
 
+import com.uxcam.UXCam;
+
 public class LaunchActivity extends Activity implements ActionBarLayout.ActionBarLayoutDelegate, NotificationCenter.NotificationCenterDelegate, MessagesActivity.MessagesActivityDelegate {
     private boolean finished;
     private String videoPath;
@@ -98,6 +100,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        UXCam.startWithKey("8aeca5a545a69fb");
         ApplicationLoader.postInitApplication();
 
         if (!UserConfig.isClientActivated()) {
