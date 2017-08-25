@@ -311,7 +311,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     }
                     drawerLayoutContainer.closeDrawer(false);
                 } else if (position == 10) {
-                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+9769550770"));
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:9769550770"));
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivityForResult(intent, 500);
                     drawerLayoutContainer.closeDrawer(false);
