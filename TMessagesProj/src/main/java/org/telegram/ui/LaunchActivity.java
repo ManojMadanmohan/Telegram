@@ -100,7 +100,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        UXCam.startWithKey("8aeca5a545a69fb");
+        //UXCam.startWithKey("8aeca5a545a69fb");
         ApplicationLoader.postInitApplication();
 
         if (!UserConfig.isClientActivated()) {
