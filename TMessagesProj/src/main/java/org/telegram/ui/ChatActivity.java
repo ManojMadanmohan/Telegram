@@ -774,23 +774,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             builder.setMessage(LocaleController.getString("AreYouSureDeleteThisChat", R.string.AreYouSureDeleteThisChat));
                         }
                     }
-                    builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("BREAK-UP", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            if (id != clear_history) {
-                                if (isChat) {
-                                    if (currentChat.left || currentChat instanceof TLRPC.TL_chatForbidden) {
-                                        MessagesController.getInstance().deleteDialog(dialog_id, 0, false);
-                                    } else {
-                                        MessagesController.getInstance().deleteUserFromChat((int) -dialog_id, MessagesController.getInstance().getUser(UserConfig.getClientUserId()), null);
-                                    }
-                                } else {
-                                    MessagesController.getInstance().deleteDialog(dialog_id, 0, false);
-                                }
-                                finishFragment();
-                            } else {
-                                MessagesController.getInstance().deleteDialog(dialog_id, 0, true);
-                            }
+                            new AlertDialog.Builder(getParentActivity()).setCancelable(true)
+                                    .setTitle("HaHa")
+                                    .setMessage("I won't let you :*")
+                                    .show().show();
                         }
                     });
                     builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
