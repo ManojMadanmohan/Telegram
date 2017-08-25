@@ -833,9 +833,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         } else if (i == 2) {
                                             untilTime += 60 * 60 * 48;
                                         } else if (i == 3) {
-                                            untilTime = 60 * 60 * 24 * 7;
+                                            untilTime += 60 * 60 * 24 * 7;
                                         } else if (i == 4) {
-                                            untilTime = 60 * 60 * 24 * 30;
+                                            untilTime += 60 * 60 * 24 * 30;
                                         } else if (i == 5) {
                                             untilTime = Integer.MAX_VALUE;
                                         }
@@ -843,7 +843,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("Notifications", Activity.MODE_PRIVATE);
                                         SharedPreferences.Editor editor = preferences.edit();
                                         long flags;
-                                        if (i == 3) {
+                                        if (i == 5) {
                                             editor.putInt("notify2_" + dialog_id, 2);
                                             flags = 1;
                                         } else {
