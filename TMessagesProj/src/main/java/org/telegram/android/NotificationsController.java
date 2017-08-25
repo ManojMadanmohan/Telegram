@@ -182,15 +182,7 @@ public class NotificationsController {
                         }
                     } else {
                         if (messageObject.isMediaEmpty()) {
-                            if (!shortMessage) {
-                                if (messageObject.messageOwner.message != null && messageObject.messageOwner.message.length() != 0) {
-                                    msg = LocaleController.formatString("NotificationMessageText", R.string.NotificationMessageText, ContactsController.formatName(user.first_name, user.last_name), messageObject.messageOwner.message);
-                                } else {
-                                    msg = LocaleController.formatString("NotificationMessageNoText", R.string.NotificationMessageNoText, ContactsController.formatName(user.first_name, user.last_name));
-                                }
-                            } else {
-                                msg = LocaleController.formatString("NotificationMessageNoText", R.string.NotificationMessageNoText, ContactsController.formatName(user.first_name, user.last_name));
-                            }
+                            msg = LocaleController.formatString("NotificationMessageNoText", R.string.NotificationMessageNoText, ContactsController.formatName(user.first_name, user.last_name));
                         } else if (messageObject.messageOwner.media instanceof TLRPC.TL_messageMediaPhoto) {
                             msg = LocaleController.formatString("NotificationMessagePhoto", R.string.NotificationMessagePhoto, ContactsController.formatName(user.first_name, user.last_name));
                         } else if (messageObject.messageOwner.media instanceof TLRPC.TL_messageMediaVideo) {
@@ -253,11 +245,7 @@ public class NotificationsController {
                         }
                     } else {
                         if (messageObject.isMediaEmpty()) {
-                            if (!shortMessage && messageObject.messageOwner.message != null && messageObject.messageOwner.message.length() != 0) {
-                                msg = LocaleController.formatString("NotificationMessageGroupText", R.string.NotificationMessageGroupText, ContactsController.formatName(user.first_name, user.last_name), chat.title, messageObject.messageOwner.message);
-                            } else {
-                                msg = LocaleController.formatString("NotificationMessageGroupNoText", R.string.NotificationMessageGroupNoText, ContactsController.formatName(user.first_name, user.last_name), chat.title);
-                            }
+                            msg = LocaleController.formatString("NotificationMessageGroupNoText", R.string.NotificationMessageGroupNoText, ContactsController.formatName(user.first_name, user.last_name), chat.title);
                         } else if (messageObject.messageOwner.media instanceof TLRPC.TL_messageMediaPhoto) {
                             msg = LocaleController.formatString("NotificationMessageGroupPhoto", R.string.NotificationMessageGroupPhoto, ContactsController.formatName(user.first_name, user.last_name), chat.title);
                         } else if (messageObject.messageOwner.media instanceof TLRPC.TL_messageMediaVideo) {
