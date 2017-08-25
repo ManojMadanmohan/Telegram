@@ -127,7 +127,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     private int telegramFaqRow;
     private int sendLogsRow;
     private int clearLogsRow;
-    private int switchBackendButtonRow;
+//    private int switchBackendButtonRow;
     private int versionRow;
     private int contactsSectionRow;
     private int contactsReimportRow;
@@ -242,7 +242,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         if (BuildVars.DEBUG_VERSION) {
             sendLogsRow = rowCount++;
             clearLogsRow = rowCount++;
-            switchBackendButtonRow = rowCount++;
+//            switchBackendButtonRow = rowCount++;
         }
         versionRow = rowCount++;
         //contactsSectionRow = rowCount++;
@@ -439,22 +439,22 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     presentFragment(new PrivacySettingsActivity());
                 } else if (i == languageRow) {
                     presentFragment(new LanguageSelectActivity());
-                } else if (i == switchBackendButtonRow) {
-                    if (getParentActivity() == null) {
-                        return;
-                    }
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                    builder.setMessage(LocaleController.getString("AreYouSure", R.string.AreYouSure));
-                    builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                    builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            ConnectionsManager.getInstance().switchBackend();
-                        }
-                    });
-                    builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
-                    showDialog(builder.create());
-                } else if (i == telegramFaqRow) {
+//                } else if (i == switchBackendButtonRow) {
+//                    if (getParentActivity() == null) {
+//                        return;
+//                    }
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+//                    builder.setMessage(LocaleController.getString("AreYouSure", R.string.AreYouSure));
+//                    builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
+//                    builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            ConnectionsManager.getInstance().switchBackend();
+//                        }
+//                    });
+//                    builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
+//                    showDialog(builder.create());
+               } else if (i == telegramFaqRow) {
                     try {
                         Intent pickIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(LocaleController.getString("TelegramFaqUrl", R.string.TelegramFaqUrl)));
                         getParentActivity().startActivityForResult(pickIntent, 500);
@@ -992,8 +992,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         public boolean isEnabled(int i) {
             return i == textSizeRow || i == enableAnimationsRow || i == notificationRow || i == backgroundRow || i == numberRow ||
                     i == askQuestionRow || i == sendLogsRow || i == sendByEnterRow || i == privacyRow || i == wifiDownloadRow ||
-                    i == mobileDownloadRow || i == clearLogsRow || i == roamingDownloadRow || i == languageRow || i == usernameRow ||
-                    i == switchBackendButtonRow || i == telegramFaqRow || i == contactsSortRow || i == contactsReimportRow || i == saveToGalleryRow ||
+                    i == mobileDownloadRow || i == clearLogsRow || i == roamingDownloadRow || i == languageRow || i == usernameRow
+                    || i == telegramFaqRow || i == contactsSortRow || i == contactsReimportRow || i == saveToGalleryRow ||
                     i == stickersRow;
         }
 
@@ -1068,8 +1068,6 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     textCell.setText(LocaleController.getString("AskAQuestion", R.string.AskAQuestion), true);
                 } else if (i == privacyRow) {
                     textCell.setText(LocaleController.getString("PrivacySettings", R.string.PrivacySettings), true);
-                } else if (i == switchBackendButtonRow) {
-                    textCell.setText("Switch Backend", true);
                 } else if (i == telegramFaqRow) {
                     textCell.setText(LocaleController.getString("TelegramFAQ", R.string.TelegramFaq), true);
                 } else if (i == contactsReimportRow) {
@@ -1194,7 +1192,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 return 1;
             } else if (i == enableAnimationsRow || i == sendByEnterRow || i == saveToGalleryRow) {
                 return 3;
-            } else if (i == notificationRow || i == backgroundRow || i == askQuestionRow || i == sendLogsRow || i == privacyRow || i == clearLogsRow || i == switchBackendButtonRow || i == telegramFaqRow || i == contactsReimportRow || i == textSizeRow || i == languageRow || i == contactsSortRow || i == stickersRow) {
+            } else if (i == notificationRow || i == backgroundRow || i == askQuestionRow || i == sendLogsRow || i == privacyRow || i == clearLogsRow || i == telegramFaqRow || i == contactsReimportRow || i == textSizeRow || i == languageRow || i == contactsSortRow || i == stickersRow) {
                 return 2;
             } else if (i == versionRow) {
                 return 5;
