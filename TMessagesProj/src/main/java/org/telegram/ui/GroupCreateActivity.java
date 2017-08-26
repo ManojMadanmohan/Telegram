@@ -121,7 +121,6 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     @Override
     public boolean onFragmentCreate() {
-        Toast.makeText(getParentActivity(), "Ohhh ho, new group? Kis liye??", Toast.LENGTH_LONG).show();
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.contactsDidLoaded);
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.updateInterfaces);
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.chatDidCreated);
@@ -462,6 +461,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             }
         });
 
+        Toast.makeText(context, "Ohhh ho, new group? Kis liye??", Toast.LENGTH_LONG).show();
         return fragmentView;
     }
 
