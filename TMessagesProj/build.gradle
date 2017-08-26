@@ -1,22 +1,15 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
-        classpath 'io.fabric.tools:gradle:1.+'
     }
 }
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 
 repositories {
     mavenCentral()
-    maven { url 'https://maven.fabric.io/public' }
-    maven{
-        url 'http://sdk.uxcam.com/android/'
-    }
 }
 
 dependencies {
@@ -24,13 +17,6 @@ dependencies {
     compile 'com.google.android.gms:play-services:3.2.+'
     compile 'net.hockeyapp.android:HockeySDK:3.5.+'
     compile 'com.googlecode.mp4parser:isoparser:1.0.+'
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
-        transitive = true;
-    }
-    compile('com.crashlytics.sdk.android:crashlytics-ndk:1.1.6@aar') {
-        transitive = true;
-    }
-    compile 'com.uxcam:uxcam:2.5.10@aar'
 }
 
 android {
@@ -95,10 +81,4 @@ android {
         versionCode 542
         versionName "2.9.1"
     }
-}
-
-crashlytics {
-    enableNdk true
-    androidNdkOut 'src/main/obj'
-    androidNdkLibsOut 'src/main/libs'
 }

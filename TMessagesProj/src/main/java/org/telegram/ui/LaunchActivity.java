@@ -62,8 +62,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Map;
 
-import com.uxcam.UXCam;
-
 public class LaunchActivity extends Activity implements ActionBarLayout.ActionBarLayoutDelegate, NotificationCenter.NotificationCenterDelegate, MessagesActivity.MessagesActivityDelegate {
     private boolean finished;
     private String videoPath;
